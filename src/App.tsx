@@ -123,7 +123,7 @@ export default function App() {
 
   const wrapperClass = selectedPost
     ? 'grain min-h-screen'
-    : 'min-h-screen bg-[#FAF9F6] text-[#111] selection:bg-[#E8FF5A] selection:text-black relative overflow-x-hidden grain';
+    : 'min-h-screen bg-[#FAF9F6] text-[#111] selection:bg-[#E8FF5A] selection:text-black relative overflow-x-clip grain';
 
   return (
     <MotionConfig reducedMotion="user">
