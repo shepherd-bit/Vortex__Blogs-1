@@ -20,6 +20,7 @@ export const BLOG_POSTS: BlogPost[] = [
       coordinates: "30.2672° N, 97.7431° W"
     },
     featured: true,
+    thumbnail: '/blog-thumbnail.jpg',
     highlightMetrics: [
       { label: "ANNUAL RUN RATE", value: "$1.2M", sub: "+34% QoQ growth" },
       { label: "FLIGHT HOURS", value: "1,240 hrs", sub: "Q2 logged • West Texas" },

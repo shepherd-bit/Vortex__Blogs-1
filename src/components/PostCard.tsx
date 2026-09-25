@@ -61,6 +61,18 @@ export const PostCard: React.FC<PostCardProps> = ({ post, index, onSelect }) => 
         </div>
       </div>
 
+      {post.thumbnail && (
+        <div
+          className={`mt-5 overflow-hidden rounded-[20px] bg-[#F2EDE8] border border-black/[0.06] ${index === 0 ? 'h-[180px] md:h-[220px]' : 'h-[150px]'}`}
+        >
+          <img
+            src={post.thumbnail}
+            alt={`${post.title} thumbnail`}
+            className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
+
       <h3
         className={`mt-5 leading-[1.05] tracking-[-0.02em] font-bold text-[#111] group-hover:text-black/80 transition-colors ${
           index === 0 ? 'text-[28px] md:text-[34px]' : 'text-[20px] md:text-[24px]'

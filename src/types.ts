@@ -42,6 +42,7 @@ export interface BlogPost {
     coordinates: string;
   };
   featured?: boolean;
+  thumbnail?: string;
   highlightMetrics: MetricCard[];
   intro: string;
   fieldNoteNumber: string;
