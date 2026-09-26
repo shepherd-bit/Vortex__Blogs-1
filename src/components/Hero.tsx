@@ -19,6 +19,10 @@ export const Hero: React.FC<HeroProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // The parallax only drives the `hidden lg:block` floating assets, so on
+    // touch devices there is nothing to move — skip the listener entirely.
+    if (window.matchMedia('(hover: none)').matches) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;

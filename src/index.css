@@ -73,3 +73,45 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ============================================================
+   MOBILE DOWNSCALE
+   Scoped to phone/portrait viewports only — anything 768px and up
+   (the Tailwind `md` breakpoint) is completely untouched.
+   ============================================================ */
+@media (max-width: 767.98px) {
+  html {
+    /* 0.7 renders EVERY element — type, padding, icons, images, borders,
+       shadows — at 70% of its CSS size, i.e. a 30% downscale. The root box
+       is divided by the zoom, so content still fills the full screen width:
+       the page just fits ~43% more of itself on each screenful. */
+    zoom: 0.7;
+
+    /* iOS re-inflates font sizes (landscape especially), which would push
+       type back up and partially undo the downscale. Pin it to 100%. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Viewport units are scaled by the zoom, so paint the page in the design
+     colour as a floor — prevents any white sliver if a block under-fills. */
+  html,
+  body {
+    background-color: #faf9f6;
+  }
+
+  /* Native-feeling taps: kill the grey flash and the double-tap-to-zoom
+     delay. Panning still works, so the horizontal scrollers keep scrolling. */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* The navbar + sticky filter bar stack roughly 90 scaled px down the
+     screen, so keep jump targets clear of them. */
+  #vault,
+  #letter,
+  #about {
+    scroll-margin-top: 110px;
+  }
+}

@@ -56,7 +56,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post, index, onSelect }) => 
           </span>
         </div>
 
-        <div className="w-7 h-7 rounded-full bg-[#FAF9F6] border border-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+        {/* Touch devices never hover, so the arrow stays visible below `md`. */}
+        <div className="w-7 h-7 rounded-full bg-[#FAF9F6] border border-black/10 flex items-center justify-center shrink-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
           <ArrowUpRight className="w-3.5 h-3.5 text-black" />
         </div>
       </div>
